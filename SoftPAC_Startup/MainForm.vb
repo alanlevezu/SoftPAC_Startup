@@ -55,14 +55,14 @@ Public Class MainForm
         Return New String(c)
     End Function
 
-    Private Shared Function StringToBytes(S As String) As Byte()
-        Dim b(-1) As Byte
-        ReDim b(S.Length)
-        System.Buffer.BlockCopy(S.ToCharArray, 0, b, 0, S.Length - 1)
-        b(S.Length) = 13
-        Return b
+    'Private Shared Function StringToBytes(S As String) As Byte()
+    '    Dim b(-1) As Byte
+    '    ReDim b(S.Length)
+    '    System.Buffer.BlockCopy(S.ToCharArray, 0, b, 0, S.Length - 1)
+    '    b(S.Length) = 13
+    '    Return b
 
-    End Function
+    'End Function
 
     Private _RunB(-1) As Byte
     Private ReadOnly Property Run_B As Byte()
@@ -98,22 +98,22 @@ Public Class MainForm
             Return _ANYTasksB
         End Get
     End Property
-    Private _FileNameB(-1) As Byte
-    Private ReadOnly Property FileName_B As Byte()
-        Get
-            If _ANYTasksB.GetUpperBound(0) < 0 Then
-                Dim sX As String = "FILENAME"
-                Dim B(8) As Byte
-                For iX As Integer = 0 To sX.Length - 1
-                    B(iX) = CByte(Asc(sX(iX)))
-                Next
-                B(8) = CByte(13)
-                _FileNameB = B
+    'Private _FileNameB(-1) As Byte
+    'Private ReadOnly Property FileName_B As Byte()
+    '    Get
+    '        If _ANYTasksB.GetUpperBound(0) < 0 Then
+    '            Dim sX As String = "FILENAME"
+    '            Dim B(8) As Byte
+    '            For iX As Integer = 0 To sX.Length - 1
+    '                B(iX) = CByte(Asc(sX(iX)))
+    '            Next
+    '            B(8) = CByte(13)
+    '            _FileNameB = B
 
-            End If
-            Return _FileNameB
-        End Get
-    End Property
+    '        End If
+    '        Return _FileNameB
+    '    End Get
+    'End Property
 
     Private ReadOnly Property InitialCountdown As Integer
         Get
